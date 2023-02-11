@@ -17,8 +17,15 @@ Polymath makes it effortless to combine elements from different songs to create 
 
 ## Installation
 
-You will need at least Python 3.7. From your terminal run:
+You will need Python 3.8.
+
+If you're using pip on a Linux environment, you may need to install libsndfile manually. Please refer to the [SoundFile installation documentation for details](https://pysoundfile.readthedocs.io/#installation).
+
 ```bash
+sudo apt-get install ffmpeg 
+# or
+sudo apt-get install gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly
+
 git clone git@github.com:samim23/polymath.git
 cd polymath
 pip install -r requirements.txt

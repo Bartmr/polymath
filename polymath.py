@@ -130,7 +130,7 @@ def audio_process(vids, videos):
         if vid.endswith(".mp3"):
             # convert mp3 to wav and save it
             print('converting mp3 to wav:', vid)
-            y, sr = librosa.load(vid)
+            y, sr = librosa.load(path=vid, mono=False, sr=None) 
             path = os.getcwd() + "/library/"+audioid+".wav"
             # resample to 44100k if required
             if sr != 44100:
@@ -143,7 +143,7 @@ def audio_process(vids, videos):
         elif vid.endswith(".wav"):
             path1 = vid
             path2 = os.getcwd() + "/library/"+audioid+".wav"
-            y, sr = librosa.load(vid)
+            y, sr = librosa.load(path=vid, mono=False, sr=None) 
             if sr != 44100:
                 print('converting audio file to 44100:', vid)
                 y = librosa.resample(y, orig_sr=sr, target_sr=44100)
